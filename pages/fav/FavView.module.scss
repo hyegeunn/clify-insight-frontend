@@ -1,0 +1,483 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  flex: 1;
+  padding: $spacing-8;
+  min-width: $min-app-width;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-top: $spacing-5;
+  position: relative;
+  height: 38px;
+}
+
+.tab {
+  padding: 0 $spacing-4;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 15px;
+  font-weight: $font-weight-semibold;
+  line-height: 140%;
+  color: $color-text-muted;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.active {
+    color: $black;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $primary;
+      animation: slideIn 0.3s ease-out;
+    }
+  }
+}
+
+.content {
+  margin-top: $spacing-5;
+}
+
+.slide-right {
+  // animation: slideFromLeft 0.3s ease-out;
+}
+
+.slide-left {
+  // animation: slideFromRight 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+// @keyframes slideFromLeft {
+//   from {
+//     opacity: 0;
+//     transform: translateX(-30px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Dashboard Layout
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+// 첫 번째 행 (1616px - 20px gap)
+.firstRow {
+  display: flex;
+  gap: $spacing-5;
+  height: 297px;
+}
+
+.companyScore {
+  width: calc((822 / 1596) * 100%); // 822 / (1616 - 20)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.healthTrend {
+  width: calc((774 / 1596) * 100%); // 774 / (1616 - 20)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+// 두 번째 행 (1616px - 40px gap)
+.secondRow {
+  display: flex;
+  gap: $spacing-5;
+  height: 419px;
+}
+
+.scoreSummary {
+  width: calc((658 / 1576) * 100%); // 658 / (1616 - 40)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+}
+
+.rankingSummary {
+  width: calc((520 / 1576) * 100%); // 520 / (1616 - 40)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-direction: column;
+}
+
+.changeRate {
+  width: calc((398 / 1576) * 100%); // 398 / (1616 - 40)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-direction: column;
+}
+
+// 카드 컨텐츠 (기본)
+.cardContent {
+  flex: 1;
+}
+
+// 카드 헤더 래퍼 (패딩 적용)
+.cardHeader {
+  padding: $spacing-5 $spacing-6;
+}
+
+// 카드 컨텐츠 (패딩 없음 - full width)
+.cardContentFullWidth {
+  flex: 1;
+}
+
+// 전사 마음 건강 점수 - 컨텐츠 레이아웃
+.healthScoreContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  gap: $spacing-6;
+}
+
+.overallScore {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.scoreHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scoreTitle {
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  line-height: 150%;
+  color: $black;
+  @include text-ellipsis;
+}
+
+.tooltipIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  color: #9095a0;
+  cursor: help;
+  user-select: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.scoreDisplay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scoreInfo {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.scoreValue {
+  font-weight: $font-weight-bold;
+  font-size: 48px;
+  line-height: 66.87px;
+  letter-spacing: -0.28px;
+  color: $color-text-primary;
+  @include text-ellipsis;
+
+  @media (max-width: 1500px) {
+    font-size: 36px;
+    line-height: 50.15px;
+  }
+}
+
+.scoreChange {
+  font-weight: $font-weight-regular;
+  font-size: 15px;
+  line-height: 140%;
+  color: $error; // 기본값은 하락
+  @include text-ellipsis;
+
+  &.up {
+    color: $color-trend-up; // 상승일 때
+  }
+}
+
+.scoreDescription {
+  font-weight: $font-weight-regular;
+  font-size: 14px;
+  line-height: 150%;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+}
+
+.indicators {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  justify-content: space-around;
+
+  @media (max-width: 1500px) {
+    gap: $spacing-4; // 16px
+  }
+}
+
+.maskedMessage {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: $spacing-6;
+  font-weight: $font-weight-regular;
+  font-size: 14px;
+  line-height: 150%;
+  color: $color-text-tertiary;
+  text-align: center;
+}
+
+// 전사 마음 건강 점수 - 참여 정보
+.participationInfo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+}
+
+.participationText {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+  font-size: $body-14-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $gray-600;
+}
+
+.totalCount,
+.label {
+  color: $gray-600;
+}
+
+.separator {
+  color: $gray-600;
+}
+
+.participated {
+  font-weight: $font-weight-semibold;
+  color: $gray-600;
+}
+
+// 마음 건강 추이 - 컨트롤 영역
+.trendControls {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  flex-shrink: 0;
+}
+
+// 최고최저 점수 요약 - 전체보기 버튼
+.viewAllButton {
+  font-size: $body-13-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+// 최고최저 점수 요약 - 조직 카드 래퍼
+.organizationCards {
+  display: flex;
+  gap: 22px;
+  height: 100%;
+}
+
+// 순위별 요약 - 주의 위험 표시
+.riskIndicators {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3; // 12px
+}
+
+.riskItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.riskDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.riskLabel {
+  font-size: $body-13-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $gray-600;
+}
+
+// Status Classification Layout
+.statusClassification {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+// 첫 번째 행 (1616px - 20px gap)
+.statusFirstRow {
+  display: flex;
+  gap: $spacing-5;
+  height: 277px;
+}
+
+.statusSummary {
+  width: calc((1015 / 1596) * 100%); // 1015 / (1616 - 20)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.statusDistribution {
+  width: calc((581 / 1596) * 100%); // 581 / (1616 - 20)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+// 구간별 구성비 - 우측 정보
+.distributionInfo {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $color-text-muted;
+  text-align: right;
+}
+
+// 두 번째 행
+.statusSecondRow {
+  // height: 515px;
+}
+
+.statusDetail {
+  width: 100%;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+// 상태 카드 그리드
+.statusCardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-5;
+}
+
+// 분류 상세 카드 그리드
+.detailCardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $spacing-5;
+}
+
+// Usage Status Layout
+.usageStatus {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.usageContainer {
+  width: 100%;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.usageTableWrapper {
+  width: 100%;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: $spacing-4;
+}

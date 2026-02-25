@@ -1,0 +1,249 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  flex: 1;
+  padding: $spacing-8;
+  min-width: $min-app-width;
+}
+
+.content {
+  margin-top: $spacing-5;
+}
+
+// Main container (left + right groups)
+.mainContainer {
+  display: flex;
+  gap: $spacing-5; // 20px
+}
+
+.leftGroup {
+  width: calc((822 / 1596) * (100% - 20px)); // 51.50% of (100% - gap)
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5; // 20px
+}
+
+.rightGroup {
+  width: calc((774 / 1596) * (100% - 20px)); // 48.50% of (100% - gap)
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5; // 20px
+}
+
+.companyScore {
+  height: 297px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.healthTrend {
+  height: 297px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.bottomRow {
+  display: flex;
+  gap: $spacing-5; // 20px
+  height: 344px;
+}
+
+// 카드 컨텐츠
+.cardContent {
+  flex: 1;
+}
+
+// 전사 마음 건강 점수 - 컨텐츠 레이아웃
+.healthScoreContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  gap: $spacing-6;
+}
+
+.overallScore {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.scoreDisplay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scoreInfo {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.scoreValue {
+  font-weight: $font-weight-bold;
+  font-size: 48px;
+  line-height: 66.87px;
+  letter-spacing: -0.28px;
+  color: $color-text-primary;
+  @include text-ellipsis;
+
+  @media (max-width: 1500px) {
+    font-size: 36px;
+    line-height: 50.15px;
+  }
+}
+
+.scoreChange {
+  font-weight: $font-weight-regular;
+  font-size: 15px;
+  line-height: 140%;
+  color: $error; // 기본값은 하락
+
+  &.up {
+    color: $color-trend-up; // 상승일 때
+  }
+}
+
+.scoreDescription {
+  font-weight: $font-weight-regular;
+  font-size: 14px;
+  line-height: 150%;
+  color: #666666;
+  @include text-ellipsis;
+}
+
+.indicators {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  justify-content: space-around;
+
+  @media (max-width: 1500px) {
+    gap: 8px;
+  }
+}
+
+.maskedMessage {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: $spacing-6;
+  font-weight: $font-weight-regular;
+  font-size: 14px;
+  line-height: 150%;
+  color: $color-text-tertiary;
+  text-align: center;
+
+  .responseRate & {
+    width: 100%;
+    align-self: auto;
+  }
+}
+
+// 전사 마음 건강 점수 - 참여 정보
+.participationInfo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+}
+
+.participationText {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+  font-size: $body-14-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $gray-600;
+}
+
+.totalCount,
+.label {
+  color: $gray-600;
+}
+
+.separator {
+  color: $gray-600;
+}
+
+.participated {
+  font-weight: $font-weight-semibold;
+  color: $gray-600;
+}
+
+// 마음 건강 추이 - 컨트롤 영역
+.trendControls {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  flex-shrink: 0;
+}
+
+.responseRate {
+  width: calc((388 / 782) * (100% - 20px)); // 49.62% of (100% - gap)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.teamAverage {
+  width: calc((414 / 782) * (100% - 20px)); // 52.94% of (100% - gap)
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.riskTrend {
+  height: 344px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-5 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+// 응답률 카드 컨텐츠
+.responseRateContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.responseRate .cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.responseDescription {
+  font-weight: $font-weight-regular;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+}

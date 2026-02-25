@@ -1,0 +1,45 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-6;
+}
+
+.errorCode {
+  font-size: 96px;
+  font-weight: $font-weight-bold;
+  color: $primary;
+  margin: 0;
+  line-height: 1;
+}
+
+.title {
+  font-size: $heading-h3-size;
+  font-weight: $heading-h3-weight;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.description {
+  font-size: $body-14-r-size;
+  font-weight: $body-14-r-weight;
+  color: $color-text-muted;
+  line-height: $body-14-r-line-height;
+  margin: 0;
+}
+
+.homeButton {
+  margin-top: $spacing-4;
+}

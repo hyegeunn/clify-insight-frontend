@@ -1,0 +1,49 @@
+@use "@/styles/variables.scss" as *;
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 32px;
+  min-height: 200px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 130%;
+  color: #2f6c46;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 145%;
+  color: #111111;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 14px;
+  color: #999999;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 14px;
+  color: #e74c3c;
+}

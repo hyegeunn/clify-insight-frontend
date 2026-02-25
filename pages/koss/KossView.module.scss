@@ -1,0 +1,78 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  padding: $spacing-8;
+  min-width: $min-app-width;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.firstRow {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+
+  > * {
+    width: calc((100% - 60px) / 4);
+    flex-shrink: 0;
+  }
+}
+
+.subValue {
+  color: #666666;
+}
+
+.secondRow {
+  display: flex;
+  gap: $spacing-5;
+  height: 538px;
+
+  .participationSection,
+  .employeeSection {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: $spacing-5 $spacing-6;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-5;
+    min-height: 0;
+  }
+
+  .participationContent {
+    min-height: 200px;
+  }
+
+  .employeeContent {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .paginationWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 28px;
+  }
+
+  .filterControls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    > :first-child {
+      width: 212px;
+    }
+
+    > :nth-child(2),
+    > :nth-child(3) {
+      width: 152px;
+    }
+  }
+}

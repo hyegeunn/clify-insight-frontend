@@ -1,0 +1,112 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  flex: 1;
+  padding: $spacing-8;
+  min-width: $min-app-width;
+}
+
+.section {
+  margin-top: $spacing-5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.firstRow {
+  display: flex;
+  gap: 20px;
+  height: 354px;
+}
+
+.settlementCard {
+  width: calc(849 / 1596 * 100%);
+  padding: 20px 24px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.solutionUsageCard {
+  width: calc(747 / 1596 * 100%);
+  padding: 20px 24px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.settlementGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-4 $spacing-3;
+}
+
+.secondRow {
+  display: flex;
+}
+
+.monthlyHistoryCard {
+  width: 100%;
+  // height: 374px;
+  padding: 20px 24px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+}
+
+.monthlyHistoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.downloadButton {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color $transition-base;
+
+  &:hover {
+    background-color: $gray-50;
+  }
+
+  &:active {
+    background-color: $gray-100;
+  }
+}
+
+.monthlyHistoryContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 28px;
+}

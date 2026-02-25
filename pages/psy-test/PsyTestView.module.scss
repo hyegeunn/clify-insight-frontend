@@ -1,0 +1,227 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  padding: $spacing-8;
+  min-width: $min-app-width;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.firstRow {
+  display: flex;
+  gap: 20px;
+  height: 408px;
+
+  .leftCard {
+    width: calc(100% * 1163 / 1596);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+
+    .statsGrid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .chartContainer {
+      flex: 1;
+      margin-top: 20px;
+    }
+  }
+
+  .rightCard {
+    width: calc(100% * 433 / 1596);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+
+    .emptyChartWrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.secondRow {
+  display: flex;
+  gap: 20px;
+  height: 411px;
+
+  .leftCard {
+    width: calc(100% * 979 / 1596);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+
+    .emptyChartWrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progressBarWrapper {
+      margin-top: 28px;
+    }
+
+    // TODO:: 검사 만족도 - 추후 사용 예정
+    .satisfactionScore {
+      margin-top: 30px;
+      height: 58px;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+
+      .scoreValue {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 120%;
+        letter-spacing: -1%;
+        color: #111111;
+      }
+
+      .scoreMax {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 200%;
+        color: #9d9d9d;
+      }
+    }
+
+    .tagContainer {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+
+      .tag {
+        height: 28px;
+        padding: 4px 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        color: #333333;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .rightCard {
+    width: calc(100% * 617 / 1596);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+
+    .emptyChartWrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chartContent {
+      flex: 1;
+      margin-top: 20px;
+    }
+  }
+}
+
+.thirdRow {
+  display: flex;
+  gap: 20px;
+  // height: 553px;
+
+  .leftCard {
+    width: calc(100% * 979 / 1596);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    .cardHeaderWrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .emptyChartWrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paginationWrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 28px;
+    }
+  }
+
+  .rightCard {
+    width: calc(100% * 617 / 1596);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    .cardHeaderWrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      height: 34px;
+      margin-bottom: 20px;
+    }
+
+    .emptyChartWrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paginationWrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 28px;
+    }
+  }
+}
+
+.assessmentTableRow {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #effaf3 !important;
+
+    div {
+      color: #2f6c46 !important;
+    }
+  }
+}

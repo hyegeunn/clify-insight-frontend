@@ -1,0 +1,81 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+  border-top: 1px solid #e3e7f0;
+}
+
+// 컬럼 너비 (400px 기준)
+.rankColumn {
+  width: 15%;
+  flex-shrink: 0;
+  font-weight: $font-weight-regular;
+  font-size: 13px;
+  line-height: 130%;
+  color: #666666;
+}
+
+.departmentColumn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.departmentNameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: $font-weight-regular;
+  font-size: 14px;
+  line-height: 150%;
+  color: #111111;
+  cursor: pointer;
+  transition: color $transition-base;
+  @include text-ellipsis;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.changeRateColumn {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-shrink: 0;
+}
+
+// 변동률 스타일
+.changeRate {
+  font-weight: $font-weight-semibold;
+  font-size: 18px;
+  line-height: 140%;
+  color: #aaaaaa;
+
+  &.up {
+    color: #ea1d1d;
+  }
+
+  &.down {
+    color: #1985ff;
+  }
+}
+
+// 전후 비교 텍스트 스타일
+.beforeAfter {
+  font-weight: $font-weight-regular;
+  font-size: 13px;
+  line-height: 130%;
+  text-align: right;
+  color: #a3a3a3;
+  @include text-ellipsis;
+}
