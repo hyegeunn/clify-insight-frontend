@@ -1,0 +1,66 @@
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
+.checkboxContainer {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+
+  &:checked + .checkboxCustom {
+    background-color: $primary;
+    border-color: $primary;
+
+    .checkIcon {
+      opacity: 1;
+    }
+  }
+
+  &:disabled + .checkboxCustom {
+    background-color: $gray-100;
+    border-color: $gray-200;
+    cursor: not-allowed;
+  }
+}
+
+.checkboxCustom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-base;
+  pointer-events: none;
+}
+
+.checkIcon {
+  opacity: 0;
+  transition: opacity $transition-base;
+}
+
+.label {
+  font-family: $font-family-primary;
+  font-size: $body-13-r-size;
+  font-weight: $body-13-r-weight;
+  line-height: $body-13-r-line-height;
+  color: $gray-800;
+  cursor: pointer;
+  user-select: none;
+}

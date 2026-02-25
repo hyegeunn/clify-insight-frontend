@@ -1,0 +1,109 @@
+@use "../../styles/variables.scss" as *;
+
+.card {
+  height: 150px;
+  padding: 20px 24px;
+  border-radius: $border-radius-lg;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: $button-15-sb-size;
+  font-weight: $font-weight-semibold;
+  line-height: 140%;
+  color: $gray-800;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more {
+  font-family: $font-family-primary;
+  font-size: $body-13-r-size;
+  font-weight: $font-weight-regular;
+  line-height: $body-13-r-line-height;
+  letter-spacing: $body-13-r-letter-spacing;
+  text-align: right;
+  color: $gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-4-5;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+  min-width: 0;
+  flex: 1;
+}
+
+.valueWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-1;
+  min-width: 0;
+}
+
+.value {
+  font-size: $heading-h4-size;
+  font-weight: $font-weight-semibold;
+  line-height: $heading-h3-line-height;
+  color: $black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.subValue {
+  // 스타일은 각 카드마다 다르므로 부모에서 스타일링
+}
+
+.description {
+  font-family: $font-family-primary;
+  font-size: $caption-12-r-size;
+  font-weight: $font-weight-regular;
+  line-height: $caption-12-r-line-height;
+  letter-spacing: $caption-12-r-letter-spacing;
+  color: $gray-600;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconWrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: $border-radius-lg;
+  background-color: $primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

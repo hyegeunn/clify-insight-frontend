@@ -1,0 +1,25 @@
+@use "../../styles/variables.scss" as *;
+
+.dateRangeSelector {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.periodInfo {
+  transition: color 0.2s;
+
+  &:hover .label {
+    color: $primary-hover;
+  }
+}
+
+.label {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  color: $gray-600;
+  white-space: nowrap;
+  text-align: right;
+  transition: color 0.2s;
+}

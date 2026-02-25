@@ -1,0 +1,45 @@
+@use "@/styles/variables.scss" as *;
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background-color: $white;
+  transition: border-color 0.2s ease;
+
+  &.focused {
+    border-color: $primary;
+  }
+
+  &.disabled {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  line-height: 150%;
+  color: $color-text-secondary;
+  background-color: transparent;
+
+  &::placeholder {
+    color: #a3a3a3;
+  }
+
+  &:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: #d1d5db;
+    }
+  }
+}

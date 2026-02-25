@@ -1,0 +1,108 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progressItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 17px;
+
+  &.vertical {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    gap: 8px;
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 150%;
+  color: $color-text-secondary;
+  flex-shrink: 0;
+  @include text-ellipsis;
+}
+
+.barValueWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.barContainer {
+  flex: 1;
+  height: 13px;
+  background-color: $border-light;
+  border-radius: $border-radius-progress;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #71b48a 0%, $primary 100%);
+  border-radius: $border-radius-progress;
+  transition: width $transition-slow-smooth;
+}
+
+.valueSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 4px;
+}
+
+.percentage {
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  line-height: 130%;
+  color: $color-text-secondary;
+  font-variant-numeric: lining-nums proportional-nums;
+  text-align: right;
+}
+
+.value {
+  font-size: 13px;
+  font-weight: $font-weight-regular;
+  line-height: 130%;
+}
+
+.current {
+  color: $color-text-secondary;
+}
+
+.divider,
+.max {
+  color: $color-text-muted;
+}
+
+.countValue {
+  font-size: 13px;
+  font-weight: $font-weight-regular;
+  line-height: 130%;
+  color: $color-text-secondary;
+  text-align: right;
+}
+
+.countWithPercentage {
+  font-size: 13px;
+  line-height: 130%;
+  color: $color-text-secondary;
+  text-align: right;
+
+  .count {
+    font-weight: $font-weight-semibold;
+    font-variant-numeric: lining-nums proportional-nums;
+  }
+
+  .percentageText {
+    font-weight: $font-weight-regular;
+  }
+}

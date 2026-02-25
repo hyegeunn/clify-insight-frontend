@@ -1,0 +1,35 @@
+@use "@/styles/variables.scss" as *;
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    .resetText {
+      color: #2f6c46;
+    }
+
+    :global {
+      svg path {
+        fill: #2f6c46;
+      }
+    }
+  }
+}
+
+.resetText {
+  color: #9d9d9d;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 145%;
+  transition: color 0.2s ease;
+
+  @media (max-width: 1500px) {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+@use "@/styles/variables.scss" as *;
+
+.tooltipWrapper {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.trigger {
+  display: inline-flex;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.content {
+  position: relative;
+  background: $color-text-secondary;
+  color: $white;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 11px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  min-width: 38px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.arrow {
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: -4px;
+  width: 10px;
+  height: 6px;
+  background: $color-text-secondary;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

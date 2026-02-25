@@ -1,0 +1,29 @@
+@use '../../styles/variables.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 34px;
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-size: $heading-h4-size;
+  font-weight: $heading-h4-weight;
+  line-height: $heading-h4-line-height;
+  letter-spacing: $heading-h4-letter-spacing;
+  color: $black;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 34px;
+  @include text-ellipsis;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+}

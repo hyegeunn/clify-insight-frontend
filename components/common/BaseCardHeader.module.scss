@@ -1,0 +1,87 @@
+@use "../../styles/variables.scss" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-size: $button-15-sb-size;
+  font-weight: $font-weight-semibold;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: $gray-800;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag {
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background-color: #ffeded;
+  font-size: 11px;
+  font-weight: $font-weight-regular;
+  line-height: 140%;
+  color: $red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tagwarning {
+  background-color: #ffeded;
+  color: $red;
+}
+
+.tagerror {
+  background-color: #ffeded;
+  color: $red;
+}
+
+.tagsuccess {
+  background-color: #ffeded;
+  color: $red;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: #a3a3a3;
+  white-space: nowrap;
+}
+
+.more {
+  font-family: $font-family-primary;
+  font-size: $body-13-r-size;
+  font-weight: $font-weight-regular;
+  line-height: $body-13-r-line-height;
+  letter-spacing: $body-13-r-letter-spacing;
+  text-align: right;
+  color: $gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color $transition-base;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $primary;
+  }
+}

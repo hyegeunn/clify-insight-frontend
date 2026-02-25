@@ -1,0 +1,148 @@
+@use "@/styles/variables.scss" as *;
+
+.baseTable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $border;
+  overflow: hidden;
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  line-height: 150%;
+  color: $color-text-secondary;
+  min-width: 0;
+
+  &.sortable {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &.align-left {
+    justify-content: flex-start;
+  }
+
+  &.align-center {
+    justify-content: center;
+  }
+
+  &.align-right {
+    justify-content: flex-end;
+  }
+
+  &.checkboxCell {
+    padding: 0 16px;
+    justify-content: center;
+  }
+}
+
+.headerLabel {
+  flex-shrink: 0;
+  @include text-ellipsis;
+}
+
+.headerTooltip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.headerIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: $gray-300;
+}
+
+.sortIcon {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: $primary;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $border-light;
+  overflow: hidden;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.totalRow {
+  border-bottom: none !important;
+  .cell {
+    div {
+      font-weight: $font-weight-semibold !important;
+      font-size: 14px !important;
+      line-height: 150% !important;
+      color: $color-text-primary !important;
+      @include text-ellipsis;
+    }
+  }
+}
+
+.rowHover {
+  &:hover {
+    background-color: $primary-light;
+  }
+}
+
+.rowPointer {
+  cursor: pointer;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: $font-weight-regular;
+  line-height: 130%;
+  color: $color-text-secondary;
+  min-width: 0;
+
+  &.checkboxCell {
+    padding: 0 16px;
+    justify-content: center;
+  }
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px; // 최소 높이 (height prop이 없을 때 기본값)
+}
+
+.emptyText {
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $gray-500;
+}

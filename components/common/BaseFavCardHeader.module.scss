@@ -1,0 +1,64 @@
+@use "@/styles/variables.scss" as *;
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $spacing-3;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+  flex: 1;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1;
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-size: $button-15-sb-size;
+  font-weight: $font-weight-semibold;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: $gray-800;
+  margin: 0;
+  @include text-ellipsis;
+}
+
+.descriptionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-3; // 12px
+}
+
+.description {
+  font-family: $font-family-primary;
+  font-size: $body-13-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: $gray-600;
+  margin: 0;
+  @include text-ellipsis;
+}
+
+.descriptionRightContent {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  flex-shrink: 0;
+}

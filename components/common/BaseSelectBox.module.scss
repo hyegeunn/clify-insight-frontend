@@ -1,0 +1,87 @@
+@use "@/styles/variables.scss" as *;
+
+.selectContainer {
+  position: relative;
+}
+
+.selectButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-3;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: $border-radius-base;
+  cursor: pointer;
+  transition: border-color $transition-base;
+
+  &:hover:not(.disabled) {
+    border-color: $primary;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.textWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectedText {
+  font-family: $font-family-primary;
+  font-size: $caption-12-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: $gray-600;
+  @include text-ellipsis;
+}
+
+.chevronIcon {
+  transition: transform $transition-base;
+  flex-shrink: 0;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.optionsWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: $border-radius-base;
+  box-shadow: $shadow-md;
+  z-index: $z-dropdown;
+  overflow: hidden;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $spacing-3;
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-size: $caption-12-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: $gray-600;
+  transition: background-color $transition-base, color $transition-base;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-light;
+  }
+}

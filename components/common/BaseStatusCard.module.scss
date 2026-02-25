@@ -1,0 +1,104 @@
+@use "@/styles/variables.scss" as *;
+
+.card {
+  height: 157px;
+  padding: $spacing-5;
+  background-color: $white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// 헤더 영역
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 150%;
+  color: $black;
+  @include text-ellipsis;
+}
+
+.tag {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: $font-weight-regular;
+  line-height: 140%;
+}
+
+.scoreRange {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: #a3a3a3;
+}
+
+// 통계 영역
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+.teamCount {
+  font-size: 28px;
+  font-weight: $font-weight-bold;
+  line-height: 110%;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.detailsText {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $color-text-tertiary;
+}
+
+.change {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+
+  &.increase {
+    color: $error;
+  }
+
+  &.decrease {
+    color: $color-trend-up;
+  }
+}
+
+.noChange {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  color: $color-text-tertiary;
+}

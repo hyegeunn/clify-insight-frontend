@@ -1,0 +1,111 @@
+@use "@/styles/variables.scss" as *;
+
+.card {
+  width: calc(33.333% - 8px); // 33.333% - (gap 12px * 2 / 3)
+  padding: $spacing-5; // 20px
+  border: 1px solid $border-light;
+  border-radius: $border-radius-base;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2; // 8px
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-1; // 4px
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-size: $body-14-r-size;
+  font-weight: $font-weight-regular;
+  line-height: $body-14-r-line-height;
+  letter-spacing: $body-14-r-letter-spacing;
+  color: $gray-600;
+  @include text-ellipsis;
+}
+
+.tag {
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background-color: #ffeded;
+  font-size: 11px;
+  font-weight: $font-weight-regular;
+  line-height: 140%;
+  color: $red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagwarning {
+  background-color: #ffeded;
+  color: $red;
+}
+
+.tagerror {
+  background-color: #ffeded;
+  color: $red;
+}
+
+.tagsuccess {
+  background-color: #ffeded;
+  color: $red;
+}
+
+.mainSection {
+  display: flex;
+  align-items: flex-end;
+  gap: $spacing-1; // 4px
+}
+
+.mainContent {
+  font-family: $font-family-primary;
+  font-size: $heading-h4-size; // 20px
+  font-weight: $font-weight-semibold;
+  line-height: $heading-h4-line-height; // 130%
+  letter-spacing: $heading-h4-letter-spacing;
+  color: $black;
+  @include text-ellipsis;
+}
+
+.trend {
+  font-family: $font-family-primary;
+  font-size: $label-12-m-size; // 12px
+  font-weight: $font-weight-medium;
+  line-height: $label-12-m-line-height; // 150%
+  letter-spacing: $label-12-m-letter-spacing;
+  @include text-ellipsis;
+}
+
+.trendUp {
+  color: $color-trend-up;
+}
+
+.trendDown {
+  color: $color-trend-down;
+}
+
+.percentage {
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  line-height: 130%;
+  color: $gray-600;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.subSection {
+  display: flex;
+}
+
+.subContent {
+  font-family: $font-family-primary;
+  font-size: $caption-12-r-size; // 12px
+  font-weight: $font-weight-regular;
+  line-height: $caption-12-r-line-height; // 150%
+  letter-spacing: $caption-12-r-letter-spacing;
+  color: $gray-500;
+  @include text-ellipsis;
+}

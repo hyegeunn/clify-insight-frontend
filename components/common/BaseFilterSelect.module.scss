@@ -1,0 +1,89 @@
+@use "@/styles/variables.scss" as *;
+
+.filterSelectContainer {
+  position: relative;
+}
+
+.selectButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background-color: $white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  width: 100%;
+
+  &:hover,
+  &.open {
+    border-color: $primary;
+  }
+}
+
+.label {
+  font-size: 12px;
+  line-height: 150%;
+  color: $color-text-secondary;
+  white-space: nowrap;
+}
+
+.value {
+  flex: 1;
+  font-size: 12px;
+  line-height: 150%;
+  color: #a3a3a3;
+  text-align: left;
+  @include text-ellipsis;
+}
+
+.chevronIcon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.optionsWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 150%;
+  color: $color-text-secondary;
+  transition: all 0.2s ease;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border;
+  }
+
+  &:hover {
+    background-color: $primary-light;
+    color: $primary;
+  }
+
+  &.selected {
+    background-color: $primary-light;
+    color: $primary;
+  }
+}

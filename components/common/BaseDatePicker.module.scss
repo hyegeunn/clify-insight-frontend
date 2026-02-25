@@ -1,0 +1,214 @@
+@use "../../styles/variables.scss" as *;
+
+.datePicker {
+  position: relative;
+  display: inline-block;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 8px;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $primary-hover;
+  }
+}
+
+.text {
+  width: 72px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: $gray-800;
+  white-space: nowrap;
+  margin-right: -8px;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  min-width: 280px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yearSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.yearBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: $color-text-secondary;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.navBtns {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.navBtnDisabled {
+  cursor: not-allowed;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 8px;
+  column-gap: 9.5px;
+}
+
+.monthBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 150%;
+  text-align: center;
+  color: $gray-600;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $primary-light;
+    border-radius: 500px;
+  }
+}
+
+.monthBtnSelected {
+  background-color: $primary-light;
+  color: $primary;
+  border-radius: 500px;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+}
+
+.monthBtnDisabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  color: $gray-300;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.years {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 8px;
+  column-gap: 9.5px;
+}
+
+.yearItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 150%;
+  text-align: center;
+  color: $gray-600;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+}
+
+.yearItemSelected {
+  background-color: $primary-light;
+  color: $primary;
+  border-radius: 500px;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+}
+
+.yearItemDisabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  color: $gray-300;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

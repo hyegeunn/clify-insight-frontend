@@ -1,0 +1,75 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.chartWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart {
+  display: block;
+}
+
+.progressCircle {
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.valueWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  transition: color 0.3s ease;
+  @include text-ellipsis;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.labelWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1d1f;
+  @include text-ellipsis;
+}
+
+.statusTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-family: $font-family-primary;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+  transition: all 0.3s ease;
+}

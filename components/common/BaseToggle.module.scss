@@ -1,0 +1,54 @@
+@use "@/styles/variables.scss" as *;
+
+.toggleContainer {
+  position: relative;
+  display: flex;
+  gap: 0.5px;
+  border-radius: $border-radius-base;
+  background-color: $gray-50;
+  width: fit-content;
+  padding: $spacing-1; // 상하좌우 4px 패딩
+}
+
+.slider {
+  position: absolute;
+  left: $spacing-1; // 4px
+  top: $spacing-1; // 4px
+  border-radius: $border-radius-base;
+  background-color: $white;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.tab {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+  font-family: $font-family-primary;
+  font-size: $caption-12-r-size;
+  font-weight: $font-weight-regular;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: $gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &.active {
+    color: $black;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:not(.disabled):hover {
+    color: $black;
+  }
+}
